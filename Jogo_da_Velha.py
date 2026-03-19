@@ -45,6 +45,29 @@ def ValidarVitoria(rodada):
         interface()
         print("O {} Venceu!".format(rodada))
         parar = True
+
+def PegarJogada():
+    jogada_valida = False
+    while jogada_valida == False:
+        try:
+            linha = int (input("Digite a linha escolhida: "))
+            coluna = int (input("Digite a coluna escolhida: "))
+
+            if linha >= 0 and linha <= 2 and coluna >= 0 and coluna <= 2 :
+                jogada_valida = True
+
+                if tabuleiro[linha][coluna] == " ":
+                    jogada_valida = True
+                else:
+                    jogada_valida = False
+                    print("essa posiçao esta ocupada,digite outra linha e coluna vazia")
+
+            else:
+             print ("digito errado, digite numeros inteiro de 0 a 2 na linha e na coluna")
+
+        except:
+            print("voçe digitou um caractere errado, digite um numero valido")
+    return linha, coluna        
     
 
 tabuleiro = [[" ", " ", " "],[" ", " ", " "],[" ", " ", " "] ]
@@ -59,8 +82,7 @@ while parar == False:
         parar = True
     interface()
 
-    linha = int (input("Digite a linha escolhida: "))
-    coluna = int (input("Digite a coluna escolhida: "))
+    linha, coluna = PegarJogada()
 
     if rodada == "X":
         tabuleiro[linha][coluna] = "X"

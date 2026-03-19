@@ -7,7 +7,7 @@ O objetivo do projeto é praticar lógica de programação, manipulação de lis
 
 ## 📌 Versão atual
 
-**Versão 1 – Jogo funcional**
+**Versão 1 – Jogo funcional** **Feito**
 
 O jogo permite que dois jogadores joguem alternadamente no terminal até que um vença ou aconteça empate.
 
@@ -58,7 +58,7 @@ Este arquivo contém toda a lógica do jogo.
 
 O projeto será evoluído em etapas para praticar novas habilidades de programação.
 
-### Versão 2
+### Versão 2 --- Feito
 
 * impedir jogada em posição ocupada
 * validar entrada do usuário
