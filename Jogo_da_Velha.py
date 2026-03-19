@@ -8,42 +8,42 @@ def ValidarVitoria(rodada):
     global parar
     if(tabuleiro[0][0] == rodada and tabuleiro[0][1] == rodada and tabuleiro [0][2] == rodada):
         interface()
-        print("O {} Venceu!".format(rodada))
+        print("O jogador {} venceu!".format(rodada))
         parar = True
 
     if(tabuleiro[1][0] == rodada and tabuleiro[1][1] == rodada and tabuleiro [1][2] == rodada):
         interface()
-        print("O {} Venceu!".format(rodada))
+        print("O jogador {} venceu!".format(rodada))
         parar = True
         
     if(tabuleiro[2][0] == rodada and tabuleiro[2][1] == rodada and tabuleiro [2][2] == rodada):
         interface()
-        print("O {} Venceu!".format(rodada))
+        print("O jogador {} venceu!".format(rodada))
         parar = True
 
     if(tabuleiro[0][0] == rodada and tabuleiro[1][0] == rodada and tabuleiro [2][0] == rodada):
         interface()
-        print("O {} Venceu!".format(rodada))
+        print("O jogador {} venceu!".format(rodada))
         parar = True
         
     if(tabuleiro[0][1] == rodada and tabuleiro[1][1] == rodada and tabuleiro [2][1] == rodada):
         interface()
-        print("O {} Venceu!".format(rodada))
+        print("O jogador {} venceu!".format(rodada))
         parar = True
 
     if(tabuleiro[0][2] == rodada and tabuleiro[1][2] == rodada and tabuleiro [2][2] == rodada):
         interface()
-        print("O {} Venceu!".format(rodada))
+        print("O jogador {} venceu!".format(rodada))
         parar = True
 
     if(tabuleiro[0][0] == rodada and tabuleiro[1][1] == rodada and tabuleiro [2][2] == rodada):
         interface()
-        print("O {} Venceu!".format(rodada))
+        print("O jogador {} venceu!".format(rodada))
         parar = True
 
     if(tabuleiro[2][0] == rodada and tabuleiro[1][1] == rodada and tabuleiro [0][2] == rodada):
         interface()
-        print("O {} Venceu!".format(rodada))
+        print("O jogador {} venceu!".format(rodada))
         parar = True
 
 def PegarJogada():
@@ -81,7 +81,7 @@ while parar == False:
         print ("Empate!")
         parar = True
     interface()
-
+    print ("SUA VEZ {}".format(rodada))
     linha, coluna = PegarJogada()
 
     if rodada == "X":
@@ -89,6 +89,7 @@ while parar == False:
         ValidarVitoria(rodada)
         jogadas += 1
         rodada = "O"
+
     elif rodada == "O":
         tabuleiro[linha][coluna] = "O"
         ValidarVitoria(rodada)
