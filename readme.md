@@ -66,6 +66,7 @@ O projeto será evoluído em etapas para praticar novas habilidades de programa�
 
 ### Versão 3
 
+* sair no meio de uma partida
 * contador de partidas
 * opção de jogar novamente
 
