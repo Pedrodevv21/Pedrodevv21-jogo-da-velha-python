@@ -72,6 +72,7 @@ O projeto será evoluído em etapas para praticar novas habilidades de programa�
 
 ### Versão 4
 
+* placar de vitorias
 * modo contra computador (jogada aleatória)
 
 ### Versão 5

@@ -87,12 +87,16 @@ def PegarJogada():
     
 
 jogar_novamente = True
+Vitoria_X = 0
+Vitoria_O = 0
 qtde_partidas = 0 
 while jogar_novamente == True:
     tabuleiro = [[" ", " ", " "],[" ", " ", " "],[" ", " ", " "] ]
     jogadas = 0
     rodada = "X"
     parar = False
+
+
 
     qtde_partidas += 1
     print("Partida {}".format(qtde_partidas))
@@ -102,7 +106,11 @@ while jogar_novamente == True:
         if jogadas == 9:
             interface()
             print ("Empate!")
+            print ("PLACAR")
+            print ("X = {}".format(Vitoria_X))
+            print ("O = {}".format(Vitoria_O))
             parar = True
+            break
         interface()
         print ("SUA VEZ {}".format(rodada))
         linha, coluna = PegarJogada()
@@ -120,6 +128,10 @@ while jogar_novamente == True:
             tabuleiro[linha][coluna] = "X"
             ValidarVitoria(rodada)
             if parar == True:
+                Vitoria_X += 1
+                print ("PLACAR")
+                print ("X = {}".format(Vitoria_X))
+                print ("O = {}".format(Vitoria_O))    
                 break   
             jogadas += 1
             rodada = "O"
@@ -128,11 +140,13 @@ while jogar_novamente == True:
             tabuleiro[linha][coluna] = "O"
             ValidarVitoria(rodada)
             if parar == True:
+                Vitoria_O += 1
+                print ("PLACAR")
+                print ("X = {}".format(Vitoria_X))
+                print ("O = {}".format(Vitoria_O))
                 break              
             jogadas += 1
             rodada =  "X"
-
-
   
     
     if jogar_novamente == True:
