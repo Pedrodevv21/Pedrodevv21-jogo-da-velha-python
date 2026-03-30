@@ -1,3 +1,5 @@
+import random
+
 def interface():
     print("   0   1   2")
     print("0 [{}] [{}] [{}]".format(tabuleiro[0][0],tabuleiro[0][1],tabuleiro[0][2]))
@@ -83,8 +85,24 @@ def PegarJogada():
 
         except:
             print("voçe digitou um caractere errado, digite um numero valido")
-    return linha, coluna        
-    
+    return linha, coluna  
+
+def jogada_computador():
+    jogada_valida = False
+    while jogada_valida == False:
+        linha = random.randint(0, 2)
+        coluna = random.randint(0,2)
+        
+        if tabuleiro[linha][coluna] == " ":
+            jogada_valida = True
+
+        else:
+            jogada_valida = False
+
+    return linha, coluna
+            
+
+
 
 jogar_novamente = True
 Vitoria_X = 0
@@ -96,10 +114,31 @@ while jogar_novamente == True:
     rodada = "X"
     parar = False
 
-
-
     qtde_partidas += 1
     print("Partida {}".format(qtde_partidas))
+
+
+    modo_jogo = True 
+
+    while modo_jogo == True:
+        try:
+            jogar =  int (input ("Voçe deseja jogar com o computador ou com outro jogador ? 1 para jogar com computador, 2 para jogador: "))
+
+            if jogar == 2:
+                print ("modo com jogador")
+                jogar_novamente = True
+                modo_jogo = False
+            
+            elif jogar == 1:
+                print ("Modo computador ")
+                jogar_novamente = True
+                modo_jogo = False
+                
+        
+ 
+        except:
+            print("voçe digitou um caractere errado, digite um numero valido")
+
 
     while parar == False:
     
@@ -113,18 +152,20 @@ while jogar_novamente == True:
             break
         interface()
         print ("SUA VEZ {}".format(rodada))
-        linha, coluna = PegarJogada()
 
-        if linha == None:
-             novamente_valido = True
-             jogar_novamente = False
-             break
-        if coluna == None:
-             novamente_valido = True
-             jogar_novamente = False
-             break
 
         if rodada == "X":
+            linha, coluna = PegarJogada()  
+            
+            if linha == None:
+                novamente_valido = True
+                jogar_novamente = False
+                break
+            if coluna == None:
+                novamente_valido = True
+                jogar_novamente = False
+                break
+
             tabuleiro[linha][coluna] = "X"
             ValidarVitoria(rodada)
             if parar == True:
@@ -137,6 +178,21 @@ while jogar_novamente == True:
             rodada = "O"
 
         elif rodada == "O":
+
+            if jogar == 1:
+                linha,coluna = jogada_computador()
+            elif jogar == 2:
+                linha, coluna = PegarJogada()
+
+            if linha == None:
+                novamente_valido = True
+                jogar_novamente = False
+                break
+            if coluna == None:
+                novamente_valido = True
+                jogar_novamente = False
+                break
+                
             tabuleiro[linha][coluna] = "O"
             ValidarVitoria(rodada)
             if parar == True:

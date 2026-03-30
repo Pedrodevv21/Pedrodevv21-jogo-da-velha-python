@@ -58,24 +58,24 @@ Este arquivo contém toda a lógica do jogo.
 
 O projeto será evoluído em etapas para praticar novas habilidades de programação.
 
-### Versão 2 --- Feito
+### Versão 2 --- FEITO
 
 * impedir jogada em posição ocupada
 * validar entrada do usuário
 * melhorar mensagens do jogo
 
-### Versão 3
+### Versão 3 --- FEITO
 
 * sair no meio de uma partida
 * contador de partidas
 * opção de jogar novamente
 
-### Versão 4
+### Versão 4 --- FEITO
 
 * placar de vitorias
 * modo contra computador (jogada aleatória)
 
-### Versão 5
+### Versão 5 --- 
 
 * refatoração do código
 * redução de repetição de lógica
